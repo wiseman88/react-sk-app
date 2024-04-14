@@ -5,9 +5,9 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react'
-import ExploreContainer from '../components/ExploreContainer'
 import './HomePage.css'
 import Header from '../components/Header'
+import ListContainer from '../components/ListContainer'
 
 const HomePage: React.FC = () => {
   return (
@@ -19,7 +19,9 @@ const HomePage: React.FC = () => {
             <IonTitle size='large'>Slovensko 2.0</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name='Tab 1 page' />
+        <div className='mt-4'>
+          <ListContainer />
+        </div>
       </IonContent>
     </IonPage>
   )
