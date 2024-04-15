@@ -1,6 +1,7 @@
 import { IonList } from '@ionic/react'
 import ListItem from './ListItem'
 import data from '../data/services.json'
+import { Link } from 'react-router-dom'
 
 const ListContainer = () => {
   const getCategoryName = (categoryId: number) => {
@@ -22,13 +23,15 @@ const ListContainer = () => {
       <IonList>
         {data &&
           data.list.map((item) => (
-            <ListItem
-              key={item.id}
-              serviceTitle={item.name}
-              categories={getCategories(item.categories)}
-              fees={item.fees}
-              additionalFees={item.additionalFees}
-            />
+            <Link to={`/services/${item.id}`} key={item.id}>
+              <ListItem
+                key={item.id}
+                serviceTitle={item.name}
+                categories={getCategories(item.categories)}
+                fees={item.fees}
+                additionalFees={item.additionalFees}
+              />
+            </Link>
           ))}
       </IonList>
     </>
