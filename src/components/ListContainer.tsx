@@ -2,22 +2,9 @@ import { IonList } from '@ionic/react'
 import ListItem from './ListItem'
 import data from '../data/services.json'
 import { Link } from 'react-router-dom'
+import { getCategories } from '../utils/helpers'
 
 const ListContainer = () => {
-  const getCategoryName = (categoryId: number) => {
-    const category = data?.categories.find((cat) => cat.id === categoryId)
-    return category ? category.name : ''
-  }
-
-  const getCategories = (categories: number[]): string => {
-    return categories
-      .map((catId) => {
-        const category = getCategoryName(catId)
-        return category ? category : ''
-      })
-      .join(', ')
-  }
-
   return (
     <>
       <IonList>
@@ -27,7 +14,7 @@ const ListContainer = () => {
               <ListItem
                 key={item.id}
                 serviceTitle={item.name}
-                categories={getCategories(item.categories)}
+                categories={getCategories(item.categories, data)}
                 fees={item.fees}
                 additionalFees={item.additionalFees}
               />
