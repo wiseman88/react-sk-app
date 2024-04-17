@@ -1,6 +1,6 @@
 import { IonList } from '@ionic/react'
 import ListItem from './ListItem'
-import data from '../data/services.json'
+import data from '../../public/data/services.json'
 import { Link } from 'react-router-dom'
 import { getCategories } from '../utils/helpers'
 
