@@ -1,0 +1,39 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "name": "Založenie s.r.o. (jednoosobová)",
+      "categories": ["podnikanie", "živnosť", "firma"],
+      "fees": 100,
+      "additionalFees": 50
+    },
+    {
+      "id": 2,
+      "name": "Založenie živnosti",
+      "categories": ["podnikanie", "živnosť", "szčo"],
+      "fees": 30,
+      "additionalFees": 10
+    },
+    {
+      "id": 3,
+      "name": "Kúpno predajná zmluva na motorové vozidlo",
+      "categories": ["predaj", "inzerát", "vozidlo", "motorka"],
+      "fees": 10,
+      "additionalFees": 5
+    },
+    {
+      "id": 4,
+      "name": "Zmena sídla s.r.o.",
+      "categories": ["firma", "zmena sídla"],
+      "fees": 20,
+      "additionalFees": 10
+    },
+    {
+      "id": 5,
+      "name": "Výročná správa s.r.o.",
+      "categories": ["firma", "zmena sídla"],
+      "fees": 20,
+      "additionalFees": 10
+    }
+  ]
+}
