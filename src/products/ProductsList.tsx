@@ -1,7 +1,6 @@
 import { IonList } from '@ionic/react'
 import ProductItem from './ProductItem'
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
 
 type Product = {
   id: number
@@ -11,22 +10,11 @@ type Product = {
   additionalFees: number
 }
 
-const ProductsList: React.FC = () => {
-  const [products, setProducts] = useState([])
+type ProductsListProps = {
+  products: Product[]
+}
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/mock/products.json')
-        const data = await response.json()
-        setProducts(data.list)
-      } catch (error) {
-        console.error('Error fetching products:', error)
-      }
-    }
-    fetchData()
-  }, [])
-
+const ProductsList: React.FC<ProductsListProps> = ({ products }) => {
   return (
     <>
       <IonList>

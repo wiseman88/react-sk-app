@@ -8,8 +8,24 @@ import {
 import './ProductsPage.css'
 import Header from '../components/Header'
 import ProductsList from './ProductsList'
+import { useEffect, useState } from 'react'
 
 const HomePage: React.FC = () => {
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/mock/products.json')
+        const data = await response.json()
+        setProducts(data.list)
+      } catch (error) {
+        console.error('Error fetching products:', error)
+      }
+    }
+    fetchData()
+  }, [])
+
   return (
     <IonPage>
       <Header />
@@ -20,7 +36,7 @@ const HomePage: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <div className='mt-4'>
-          <ProductsList />
+          <ProductsList products={products} />
         </div>
       </IonContent>
     </IonPage>
