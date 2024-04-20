@@ -5,9 +5,9 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react'
-import './HomePage.css'
+import './ProductsPage.css'
 import Header from '../components/Header'
-import ListContainer from '../components/ListContainer'
+import ProductsList from './ProductsList'
 
 const HomePage: React.FC = () => {
   return (
@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <div className='mt-4'>
-          <ListContainer />
+          <ProductsList />
         </div>
       </IonContent>
     </IonPage>

@@ -1,5 +1,5 @@
 import { IonList } from '@ionic/react'
-import ListItem from './ListItem'
+import ListItem from '../components/ListItem'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
@@ -11,7 +11,7 @@ type Product = {
   additionalFees: number
 }
 
-const ListContainer: React.FC = () => {
+const ProductsList: React.FC = () => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
@@ -47,4 +47,4 @@ const ListContainer: React.FC = () => {
   )
 }
 
-export default ListContainer
+export default ProductsList
