@@ -1,25 +1,44 @@
 import { IonList } from '@ionic/react'
 import ListItem from './ListItem'
-// import data from '../../public/data/services.json'
 import { Link } from 'react-router-dom'
-import { getCategories } from '../utils/helpers'
-import useDataStore from '../store'
+import { useEffect, useState } from 'react'
 
-const ListContainer = () => {
-  const { serviceData } = useDataStore()
+type Product = {
+  id: number
+  name: string
+  categories: string[]
+  fees: number
+  additionalFees: number
+}
+
+const ListContainer: React.FC = () => {
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/mock/products.json')
+        const data = await response.json()
+        setProducts(data.list)
+      } catch (error) {
+        console.error('Error fetching products:', error)
+      }
+    }
+    fetchData()
+  }, [])
 
   return (
     <>
       <IonList>
-        {serviceData &&
-          serviceData.list.map((item) => (
-            <Link to={`/services/${item.id}`} key={item.id}>
+        {products &&
+          products.map((product: Product) => (
+            <Link to={`/services/${product.id}`} key={product.id}>
               <ListItem
-                key={item.id}
-                serviceTitle={item.name}
-                categories={getCategories(item.categories, serviceData)}
-                fees={item.fees}
-                additionalFees={item.additionalFees}
+                key={product.id}
+                serviceTitle={product.name}
+                categories={product.categories.join(', ')}
+                fees={product.fees}
+                additionalFees={product.additionalFees}
               />
             </Link>
           ))}
