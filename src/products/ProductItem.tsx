@@ -2,14 +2,14 @@ import { IonIcon, IonItem, IonLabel } from '@ionic/react'
 import { chevronForwardOutline } from 'ionicons/icons'
 
 interface ListItemProps {
-  serviceTitle: string
+  productTitle: string
   categories: string
   fees: number
   additionalFees: number
 }
 
 const ListItem: React.FC<ListItemProps> = ({
-  serviceTitle,
+  productTitle,
   categories,
   fees,
   additionalFees,
@@ -20,7 +20,7 @@ const ListItem: React.FC<ListItemProps> = ({
         <div className='flex justify-between w-full my-2'>
           <div>
             <IonLabel>
-              <span className='text-xl'>{serviceTitle}</span>
+              <span className='text-xl'>{productTitle}</span>
               <p>{categories}</p>
             </IonLabel>
           </div>

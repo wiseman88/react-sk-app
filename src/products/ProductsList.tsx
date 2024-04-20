@@ -20,10 +20,10 @@ const ProductsList: React.FC<ProductsListProps> = ({ products }) => {
       <IonList>
         {products &&
           products.map((product: Product) => (
-            <Link to={`/services/${product.id}`} key={product.id}>
+            <Link to={`/products/${product.id}`} key={product.id}>
               <ProductItem
                 key={product.id}
-                serviceTitle={product.name}
+                productTitle={product.name}
                 categories={product.categories.join(', ')}
                 fees={product.fees}
                 additionalFees={product.additionalFees}

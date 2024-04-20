@@ -10,7 +10,7 @@ import Header from '../components/Header'
 import ProductsList from './ProductsList'
 import { useEffect, useState } from 'react'
 
-const HomePage: React.FC = () => {
+const ProductsPage: React.FC = () => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
@@ -43,4 +43,4 @@ const HomePage: React.FC = () => {
   )
 }
 
-export default HomePage
+export default ProductsPage
