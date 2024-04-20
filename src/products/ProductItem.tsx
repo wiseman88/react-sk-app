@@ -1,14 +1,14 @@
 import { IonIcon, IonItem, IonLabel } from '@ionic/react'
 import { chevronForwardOutline } from 'ionicons/icons'
 
-interface ListItemProps {
+type ProductItemProps = {
   productTitle: string
   categories: string
   fees: number
   additionalFees: number
 }
 
-const ListItem: React.FC<ListItemProps> = ({
+const ListItem: React.FC<ProductItemProps> = ({
   productTitle,
   categories,
   fees,
