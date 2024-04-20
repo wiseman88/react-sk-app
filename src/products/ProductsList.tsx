@@ -1,14 +1,7 @@
 import { IonList } from '@ionic/react'
 import ProductItem from './ProductItem'
 import { Link } from 'react-router-dom'
-
-type Product = {
-  id: number
-  name: string
-  categories: string[]
-  fees: number
-  additionalFees: number
-}
+import { Product } from '../utils/types'
 
 type ProductsListProps = {
   products: Product[]

@@ -10,14 +10,7 @@ import './ProductsPage.css'
 import Header from '../components/Header'
 import ProductsList from './ProductsList'
 import { useEffect, useState } from 'react'
-
-type Product = {
-  id: number
-  name: string
-  categories: string[]
-  fees: number
-  additionalFees: number
-}
+import { Product } from '../utils/types'
 
 const ProductsPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([])
