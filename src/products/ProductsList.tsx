@@ -1,5 +1,5 @@
 import { IonList } from '@ionic/react'
-import ListItem from '../components/ListItem'
+import ProductItem from './ProductItem'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
@@ -33,7 +33,7 @@ const ProductsList: React.FC = () => {
         {products &&
           products.map((product: Product) => (
             <Link to={`/services/${product.id}`} key={product.id}>
-              <ListItem
+              <ProductItem
                 key={product.id}
                 serviceTitle={product.name}
                 categories={product.categories.join(', ')}
