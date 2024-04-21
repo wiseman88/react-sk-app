@@ -5,35 +5,170 @@
       "name": "Založenie s.r.o. (jednoosobová)",
       "categories": ["podnikanie", "živnosť", "firma"],
       "fees": 100,
-      "additionalFees": 50
+      "additionalFees": 50,
+      "productServices": [
+        "Výročná správa s.r.o.",
+        "Zmena Sídla s.r.o.",
+        "Zmluva a kúpe auta"
+      ],
+      "productInfo": [
+        {
+          "title": "Čo budem potrebovať?",
+          "content": [
+            "Nazov firmy, ktory nie je pouzity",
+            "Sidlo firmy",
+            "Elektronicky podpisat splnomocnenie",
+            "Vybrat si predmety podnikania"
+          ]
+        },
+        {
+          "title": "Čo mám robiť ďalej?",
+          "content": [
+            "Vytvorenie firemneho uctu v banke",
+            "najst si uctovnicku"
+          ]
+        },
+        {
+          "title": "Čo bude výsledkom?",
+          "content": ["Zalozenie s.r.o.", "Obdrzanie ICO", "Obdrzanie DIC"]
+        }
+      ]
     },
     {
       "id": 2,
       "name": "Založenie živnosti",
       "categories": ["podnikanie", "živnosť", "szčo"],
       "fees": 30,
-      "additionalFees": 10
+      "additionalFees": 10,
+      "productServices": [
+        "Výročná správa s.r.o.",
+        "Zmena Sídla s.r.o.",
+        "Zmluva a kúpe auta"
+      ],
+      "productInfo": [
+        {
+          "title": "Čo budem potrebovať?",
+          "content": [
+            "Nazov firmy, ktory nie je pouzity",
+            "Sidlo firmy",
+            "Elektronicky podpisat splnomocnenie",
+            "Vybrat si predmety podnikania"
+          ]
+        },
+        {
+          "title": "Čo mám robiť ďalej?",
+          "content": [
+            "Vytvorenie firemneho uctu v banke",
+            "najst si uctovnicku"
+          ]
+        },
+        {
+          "title": "Čo bude výsledkom?",
+          "content": ["Zalozenie s.r.o.", "Obdrzanie ICO", "Obdrzanie DIC"]
+        }
+      ]
     },
     {
       "id": 3,
       "name": "Kúpno predajná zmluva na motorové vozidlo",
       "categories": ["predaj", "inzerát", "vozidlo", "motorka"],
       "fees": 10,
-      "additionalFees": 5
+      "additionalFees": 5,
+      "productServices": [
+        "Výročná správa s.r.o.",
+        "Zmena Sídla s.r.o.",
+        "Zmluva a kúpe auta"
+      ],
+      "productInfo": [
+        {
+          "title": "Čo budem potrebovať?",
+          "content": [
+            "Nazov firmy, ktory nie je pouzity",
+            "Sidlo firmy",
+            "Elektronicky podpisat splnomocnenie",
+            "Vybrat si predmety podnikania"
+          ]
+        },
+        {
+          "title": "Čo mám robiť ďalej?",
+          "content": [
+            "Vytvorenie firemneho uctu v banke",
+            "najst si uctovnicku"
+          ]
+        },
+        {
+          "title": "Čo bude výsledkom?",
+          "content": ["Zalozenie s.r.o.", "Obdrzanie ICO", "Obdrzanie DIC"]
+        }
+      ]
     },
     {
       "id": 4,
       "name": "Zmena sídla s.r.o.",
       "categories": ["firma", "zmena sídla"],
       "fees": 20,
-      "additionalFees": 10
+      "additionalFees": 10,
+      "productServices": [
+        "Výročná správa s.r.o.",
+        "Zmena Sídla s.r.o.",
+        "Zmluva a kúpe auta"
+      ],
+      "productInfo": [
+        {
+          "title": "Čo budem potrebovať?",
+          "content": [
+            "Nazov firmy, ktory nie je pouzity",
+            "Sidlo firmy",
+            "Elektronicky podpisat splnomocnenie",
+            "Vybrat si predmety podnikania"
+          ]
+        },
+        {
+          "title": "Čo mám robiť ďalej?",
+          "content": [
+            "Vytvorenie firemneho uctu v banke",
+            "najst si uctovnicku"
+          ]
+        },
+        {
+          "title": "Čo bude výsledkom?",
+          "content": ["Zalozenie s.r.o.", "Obdrzanie ICO", "Obdrzanie DIC"]
+        }
+      ]
     },
     {
       "id": 5,
       "name": "Výročná správa s.r.o.",
       "categories": ["firma", "zmena sídla"],
       "fees": 20,
-      "additionalFees": 10
+      "additionalFees": 10,
+      "productServices": [
+        "Výročná správa s.r.o.",
+        "Zmena Sídla s.r.o.",
+        "Zmluva a kúpe auta"
+      ],
+      "productInfo": [
+        {
+          "title": "Čo budem potrebovať?",
+          "content": [
+            "Nazov firmy, ktory nie je pouzity",
+            "Sidlo firmy",
+            "Elektronicky podpisat splnomocnenie",
+            "Vybrat si predmety podnikania"
+          ]
+        },
+        {
+          "title": "Čo mám robiť ďalej?",
+          "content": [
+            "Vytvorenie firemneho uctu v banke",
+            "najst si uctovnicku"
+          ]
+        },
+        {
+          "title": "Čo bude výsledkom?",
+          "content": ["Zalozenie s.r.o.", "Obdrzanie ICO", "Obdrzanie DIC"]
+        }
+      ]
     }
   ]
 }
