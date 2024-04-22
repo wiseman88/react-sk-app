@@ -1,5 +1,7 @@
 import {
+  IonBackButton,
   IonButton,
+  IonButtons,
   IonCard,
   IonCardContent,
   IonCardHeader,
@@ -71,7 +73,14 @@ const Service: React.FC = () => {
 
   return (
     <IonPage>
-      <Header />
+      <IonHeader mode='ios'>
+        <IonToolbar>
+          <IonButtons slot='start'>
+            <IonBackButton defaultHref='/' />
+          </IonButtons>
+          <IonTitle>{product?.name}</IonTitle>
+        </IonToolbar>
+      </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse='condense'>
           <IonToolbar>
