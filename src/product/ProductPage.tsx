@@ -19,7 +19,7 @@ import {
 import Header from '../components/Header'
 import { useParams } from 'react-router'
 import { useEffect, useState } from 'react'
-import { Product } from '../utils/types'
+import { Product } from '../_shared/types'
 import {
   arrowDown,
   cartOutline,

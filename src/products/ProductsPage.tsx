@@ -10,7 +10,7 @@ import './ProductsPage.css'
 import Header from '../components/Header'
 import ProductsList from './ProductsList'
 import { useEffect, useState } from 'react'
-import { Product } from '../utils/types'
+import { Product } from '../_shared/types'
 
 const ProductsPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([])
