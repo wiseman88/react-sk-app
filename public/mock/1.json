@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "name": "Založenie s.r.o. (jednoosobová)",
+    "categories": ["podnikanie", "živnosť", "firma"],
+    "fees": 100,
+    "additionalFees": 50,
+    "productServices": [
+      "Výročná správa s.r.o.",
+      "Zmena Sídla s.r.o.",
+      "Zmluva a kúpe auta"
+    ],
+    "productInfo": [
+      {
+        "title": "Čo budem potrebovať?",
+        "content": [
+          "Nazov firmy, ktory nie je pouzity",
+          "Sidlo firmy",
+          "Elektronicky podpisat splnomocnenie",
+          "Vybrat si predmety podnikania"
+        ]
+      },
+      {
+        "title": "Čo mám robiť ďalej?",
+        "content": ["Vytvorenie firemneho uctu v banke", "najst si uctovnicku"]
+      },
+      {
+        "title": "Čo bude výsledkom?",
+        "content": ["Zalozenie s.r.o.", "Obdrzanie ICO", "Obdrzanie DIC"]
+      }
+    ]
+  }
+]
