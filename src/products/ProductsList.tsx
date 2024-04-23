@@ -7,12 +7,12 @@ type ProductsListProps = {
   products: Product[]
 }
 
-const ProductsList: React.FC<ProductsListProps> = ({ products }) => {
+const ProductsList = (props: ProductsListProps) => {
   return (
     <>
       <IonList>
-        {products &&
-          products.map((product: Product) => (
+        {props.products &&
+          props.products.map((product: Product) => (
             <Link to={`/products/${product.id}`} key={product.id}>
               <ProductItem
                 key={product.id}

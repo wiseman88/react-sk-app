@@ -31,7 +31,7 @@ type RouteParams = {
   id: string
 }
 
-const ProductPage: React.FC = () => {
+const ProductPage = () => {
   const { id } = useParams<RouteParams>()
   const [product, setProduct] = useState<Product | null>(null)
   const l = 13

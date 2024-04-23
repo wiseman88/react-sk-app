@@ -12,7 +12,7 @@ import ProductsList from './ProductsList'
 import { useEffect, useState } from 'react'
 import { Product } from '../_shared/types'
 
-const ProductsPage: React.FC = () => {
+const ProductsPage = () => {
   const [products, setProducts] = useState<Product[]>([])
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
   const [searchQuery, setSearchQuery] = useState<string>('')
