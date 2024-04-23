@@ -22,8 +22,8 @@ const ProductsPage: React.FC = () => {
       try {
         const response = await fetch('/mock/products.json')
         const data = await response.json()
-        setProducts(data.list)
-        setFilteredProducts(data.list)
+        setProducts(data.products)
+        setFilteredProducts(data.products)
       } catch (error) {
         console.error('Error fetching products:', error)
       }
