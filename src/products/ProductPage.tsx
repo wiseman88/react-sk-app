@@ -31,7 +31,7 @@ type RouteParams = {
   id: string
 }
 
-const Service: React.FC = () => {
+const ProductPage: React.FC = () => {
   const { id } = useParams<RouteParams>()
   const [product, setProduct] = useState<Product | null>(null)
   const l = 13
@@ -54,11 +54,9 @@ const Service: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/mock/products.json')
+        const response = await fetch(`/mock/${id}.json`)
         const data = await response.json()
-        const product = data.list.find(
-          (item: Product) => item.id.toString() === id
-        )
+        const product = data[0]
         if (product) {
           setProduct(product)
         } else {
@@ -160,7 +158,9 @@ const Service: React.FC = () => {
               </div>
             </div>
           ) : (
-            <h1>Loading ...</h1>
+            <p className='bg-orange-100 text-orange-600 text-center p-4 rounded'>
+              Nepodarilo sa najst vami zvolený produkt
+            </p>
           )}
         </div>
       </IonContent>
@@ -168,4 +168,4 @@ const Service: React.FC = () => {
   )
 }
 
-export default Service
+export default ProductPage
