@@ -16,7 +16,6 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react'
-import Header from '../components/Header'
 import { useParams } from 'react-router'
 import { useEffect, useState } from 'react'
 import { Product } from '../_shared/types'
