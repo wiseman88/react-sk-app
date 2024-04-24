@@ -18,9 +18,9 @@ const ProductsPage = () => {
   const [searchQuery, setSearchQuery] = useState<string>('')
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchProducts = async () => {
       try {
-        const response = await fetch('/mock/products.json')
+        const response = await fetch('/mock/products/products.GET.json')
         const data = await response.json()
         setProducts(data.products)
         setFilteredProducts(data.products)
@@ -28,7 +28,7 @@ const ProductsPage = () => {
         console.error('Error fetching products:', error)
       }
     }
-    fetchData()
+    fetchProducts()
   }, [])
 
   const normalizeText = (inputString: string): string => {

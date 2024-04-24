@@ -52,9 +52,9 @@ const ProductPage = () => {
   }
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchProduct = async () => {
       try {
-        const response = await fetch(`/mock/${id}.json`)
+        const response = await fetch(`/mock/products/${id}.GET.json`)
         const data = await response.json()
         const product = data[0]
         if (product) {
@@ -66,7 +66,7 @@ const ProductPage = () => {
         console.error('Error fetching products:', error)
       }
     }
-    fetchData()
+    fetchProduct()
   }, [id])
 
   return (
