@@ -81,7 +81,7 @@ const ProductsPage = () => {
             value={searchQuery}
             onIonInput={(e) => handleSearch(e.detail.value!)}
           />
-          <ProductsList products={filteredProducts} />
+          <ProductsList products={filteredProducts} query={searchQuery} />
         </div>
       </IonContent>
     </IonPage>
