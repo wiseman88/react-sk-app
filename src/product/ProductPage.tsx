@@ -34,6 +34,7 @@ type RouteParams = {
 const ProductPage = () => {
   const { id } = useParams<RouteParams>()
   const [product, setProduct] = useState<Product | null>(null)
+  const [orderId, setOrderId] = useState<string>('')
   const l = 13
 
   const ordersList = []
@@ -49,6 +50,20 @@ const ProductPage = () => {
             Objednávka {i}
           </p>
         )
+  }
+
+  const handleOrderRequest = async () => {
+    try {
+      const response = await fetch('/mock/products/create.POST.json')
+
+      const data = await response.json()
+
+      const orderId = data[0].order_id
+
+      setOrderId(orderId)
+    } catch (error) {
+      console.error('Error fetching order id:', error)
+    }
   }
 
   useEffect(() => {
@@ -117,7 +132,7 @@ const ProductPage = () => {
                 </IonList>
               </div>
               <div className='mt-6'>
-                <IonButton expand='block'>
+                <IonButton expand='block' onClick={handleOrderRequest}>
                   <IonIcon slot='start' icon={cartOutline}></IonIcon>
                   Pokračovať na formulár
                 </IonButton>
