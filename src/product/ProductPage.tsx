@@ -26,6 +26,7 @@ import {
   chevronForward,
   locationOutline,
 } from 'ionicons/icons'
+import ProductHeader from './ProductHeader'
 
 type RouteParams = {
   id: string
@@ -71,14 +72,7 @@ const ProductPage = () => {
 
   return (
     <IonPage>
-      <IonHeader mode='ios'>
-        <IonToolbar>
-          <IonButtons slot='start'>
-            <IonBackButton defaultHref='/' />
-          </IonButtons>
-          <IonTitle>{product?.name}</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <ProductHeader productName={product?.name} />
       <IonContent fullscreen>
         <IonHeader collapse='condense'>
           <IonToolbar>
