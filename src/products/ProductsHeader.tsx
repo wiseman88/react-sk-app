@@ -1,8 +1,8 @@
 import { IonHeader, IonTitle, IonToolbar } from '@ionic/react'
+import IconWithBadge from '../components/IconWithBadge'
 import { calendarClearOutline, notificationsOutline } from 'ionicons/icons'
-import IconWithBadge from './IconWithBadge'
 
-const Header = () => {
+const ProductsHeader = () => {
   return (
     <>
       <IonHeader mode='ios'>
@@ -26,4 +26,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default ProductsHeader

@@ -7,10 +7,10 @@ import {
   IonToolbar,
 } from '@ionic/react'
 import './ProductsPage.css'
-import Header from '../components/Header'
 import ProductsList from './ProductsList'
 import { useEffect, useState } from 'react'
 import { Product } from '../_shared/types'
+import ProductsHeader from './ProductsHeader'
 
 const ProductsPage = () => {
   const [products, setProducts] = useState<Product[]>([])
@@ -68,7 +68,7 @@ const ProductsPage = () => {
 
   return (
     <IonPage>
-      <Header />
+      <ProductsHeader />
       <IonContent fullscreen>
         <IonHeader collapse='condense'>
           <IonToolbar>
