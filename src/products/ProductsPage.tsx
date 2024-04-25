@@ -6,7 +6,6 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react'
-import './ProductsPage.css'
 import ProductsList from './ProductsList'
 import { useEffect, useState } from 'react'
 import { Product } from '../_shared/types'
