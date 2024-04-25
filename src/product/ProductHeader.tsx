@@ -15,7 +15,7 @@ const ProductHeader = (props: productNameProps) => {
     <IonHeader mode='ios'>
       <IonToolbar>
         <IonButtons slot='start'>
-          <IonBackButton defaultHref='/' />
+          <IonBackButton />
         </IonButtons>
         <IonTitle>{props.productName}</IonTitle>
       </IonToolbar>
