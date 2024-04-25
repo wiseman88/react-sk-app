@@ -16,7 +16,7 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react'
-import { useParams } from 'react-router'
+import { useHistory, useParams } from 'react-router'
 import { useEffect, useState } from 'react'
 import { Product } from '../_shared/types'
 import {
@@ -34,8 +34,9 @@ type RouteParams = {
 const ProductPage = () => {
   const { id } = useParams<RouteParams>()
   const [product, setProduct] = useState<Product | null>(null)
-  const [orderId, setOrderId] = useState<string>('')
+  const [orderId, setOrderId] = useState<number>()
   const l = 13
+  const history = useHistory()
 
   const ordersList = []
   for (let i = 1; i < l; i++) {
@@ -58,9 +59,11 @@ const ProductPage = () => {
 
       const data = await response.json()
 
-      const orderId = data[0].order_id
+      const oId = data[0].order_id
 
-      setOrderId(orderId)
+      setOrderId(oId)
+
+      history.push(`/orders/${orderId}`)
     } catch (error) {
       console.error('Error fetching order id:', error)
     }
