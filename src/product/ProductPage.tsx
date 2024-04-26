@@ -63,7 +63,7 @@ const ProductPage = () => {
 
       setOrderId(oId)
 
-      history.push(`/orders/${orderId}`)
+      history.push(`/orders/${oId}`)
     } catch (error) {
       console.error('Error fetching order id:', error)
     }
