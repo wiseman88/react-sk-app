@@ -12,7 +12,7 @@ type productNameProps = {
 
 const ProductHeader = (props: productNameProps) => {
   return (
-    <IonHeader mode='ios'>
+    <IonHeader>
       <IonToolbar>
         <IonButtons slot='start'>
           <IonBackButton />

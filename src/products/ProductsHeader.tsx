@@ -5,7 +5,7 @@ import { calendarClearOutline, notificationsOutline } from 'ionicons/icons'
 const ProductsHeader = () => {
   return (
     <>
-      <IonHeader mode='ios'>
+      <IonHeader>
         <IonToolbar>
           <div className='flex justify-between p-2'>
             <IconWithBadge
