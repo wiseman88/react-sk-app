@@ -1,9 +1,11 @@
 import {
+  IonButton,
   IonCard,
   IonCardContent,
   IonCardHeader,
   IonCardTitle,
   IonContent,
+  IonFab,
   IonHeader,
   IonIcon,
   IonInput,
@@ -187,6 +189,11 @@ const OrderPage = () => {
                 Vyplnte ...
               </IonCardContent>
             </IonCard>
+            <IonFab className='py-6 px-2 w-full bg-gray-100 fixed bottom-0 right-0'>
+              <IonButton type='submit' expand='block'>
+                odoslat na spracovanie
+              </IonButton>
+            </IonFab>
           </form>
         </div>
       </IonContent>
