@@ -1,4 +1,5 @@
 import {
+  InputChangeEventDetail,
   IonButton,
   IonCard,
   IonCardContent,
@@ -15,8 +16,50 @@ import {
 } from '@ionic/react'
 import OrderHeader from './OrderHeader'
 import { chatbubbleOutline } from 'ionicons/icons'
+import { useState } from 'react'
+
+type FormData = {
+  name: string
+  email: string
+  subjects: string
+  files: string
+}
 
 const OrderPage = () => {
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    email: '',
+    subjects: '',
+    files: '',
+  })
+
+  const handleInputChange = (e: CustomEvent<InputChangeEventDetail>) => {
+    const { name, value } = e.target as HTMLInputElement
+    setFormData({ ...formData, [name]: value })
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    try {
+      const response = await fetch('/mock/products/create.POST.json', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form')
+      }
+
+      console.log(formData)
+    } catch (error: any) {
+      console.error('Error submitting form:', error.message)
+    }
+  }
+
   return (
     <IonPage>
       <OrderHeader />
@@ -28,7 +71,7 @@ const OrderPage = () => {
         </IonHeader>
         <div className='p-6'>
           <p className='text-center text-gray-400'>Vyplnte vstupne udaje</p>
-          <form>
+          <form onSubmit={handleSubmit}>
             <IonCard className='mb-8'>
               <IonCardHeader className=''>
                 <IonCardTitle className='flex justify-between'>
@@ -45,7 +88,12 @@ const OrderPage = () => {
                 neexistuje na orsr.sk
               </IonCardContent>
               <div className='p-4'>
-                <IonInput label='Nazov'></IonInput>
+                <IonInput
+                  label='Nazov'
+                  name='name'
+                  value={formData.name}
+                  onIonInput={handleInputChange}
+                ></IonInput>
               </div>
               <IonCardContent className='bg-orange-100 text-orange-600'>
                 Vyplnte ...
@@ -85,7 +133,12 @@ const OrderPage = () => {
                 Zadajte email, cez ktory sa opatovne prihlasite
               </IonCardContent>
               <div className='p-4'>
-                <IonInput label='Email'></IonInput>
+                <IonInput
+                  label='Email'
+                  name='email'
+                  value={formData.email}
+                  onIonInput={handleInputChange}
+                ></IonInput>
               </div>
               <IonCardContent className='bg-blue-100 text-blue-600'>
                 Vyplnte ...
@@ -123,7 +176,12 @@ const OrderPage = () => {
               </IonCardHeader>
               <IonCardContent>Zadajte predmety podnikania</IonCardContent>
               <div className='p-4'>
-                <IonInput label='Predmety'></IonInput>
+                <IonInput
+                  label='Predmety'
+                  name='subjects'
+                  value={formData.subjects}
+                  onIonInput={handleInputChange}
+                ></IonInput>
               </div>
               <IonCardContent className='bg-green-100 text-green-600'>
                 Vyplnte ...
@@ -164,7 +222,12 @@ const OrderPage = () => {
                 digital
               </IonCardContent>
               <div className='p-4'>
-                <IonInput label='Subory'></IonInput>
+                <IonInput
+                  label='Subory'
+                  name='files'
+                  value={formData.files}
+                  onIonInput={handleInputChange}
+                ></IonInput>
               </div>
               <IonCardContent className='bg-red-100 text-red-600'>
                 Vyplnte ...
