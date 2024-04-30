@@ -44,7 +44,7 @@ const OrderPage = () => {
     e.preventDefault()
 
     try {
-      const response = await fetch('/mock/products/create.POST.json', {
+      const response = await fetch('/mock/order/submit.POST.json', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
