@@ -23,6 +23,7 @@ type FormData = {
   email: string
   subjects: string
   files: string
+  service: string
 }
 
 const OrderPage = () => {
@@ -31,6 +32,7 @@ const OrderPage = () => {
     email: '',
     subjects: '',
     files: '',
+    service: '',
   })
 
   const handleInputChange = (e: CustomEvent<InputChangeEventDetail>) => {
@@ -99,7 +101,7 @@ const OrderPage = () => {
                 Vyplnte ...
               </IonCardContent>
             </IonCard>
-            <IonCard className='mb-8'>
+            <IonCard className='bg-orange-100 mb-8'>
               <IonCardHeader className=''>
                 <IonCardTitle className='flex justify-between'>
                   Card without input orange
@@ -114,7 +116,7 @@ const OrderPage = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
                 neque quasi temporibus?
               </IonCardContent>
-              <IonCardContent className='bg-orange-100 text-orange-600'>
+              <IonCardContent className='text-orange-600'>
                 Vyplnte ...
               </IonCardContent>
             </IonCard>
@@ -141,10 +143,10 @@ const OrderPage = () => {
                 ></IonInput>
               </div>
               <IonCardContent className='bg-blue-100 text-blue-600'>
-                Vyplnte ...
+                Spracovanie
               </IonCardContent>
             </IonCard>
-            <IonCard className='mb-8'>
+            <IonCard className='bg-blue-100 mb-8'>
               <IonCardHeader className=''>
                 <IonCardTitle className='flex justify-between'>
                   Card without input blue
@@ -159,8 +161,8 @@ const OrderPage = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
                 neque quasi temporibus?
               </IonCardContent>
-              <IonCardContent className='bg-blue-100 text-blue-600'>
-                Vyplnte ...
+              <IonCardContent className='text-blue-600'>
+                Spracovanie
               </IonCardContent>
             </IonCard>
             <IonCard className='mb-8'>
@@ -184,10 +186,10 @@ const OrderPage = () => {
                 ></IonInput>
               </div>
               <IonCardContent className='bg-green-100 text-green-600'>
-                Vyplnte ...
+                V poriadku
               </IonCardContent>
             </IonCard>
-            <IonCard className='mb-8'>
+            <IonCard className='bg-green-100 mb-8'>
               <IonCardHeader className=''>
                 <IonCardTitle className='flex justify-between'>
                   Card without input green
@@ -202,8 +204,8 @@ const OrderPage = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
                 neque quasi temporibus?
               </IonCardContent>
-              <IonCardContent className='bg-green-100 text-green-600'>
-                Vyplnte ...
+              <IonCardContent className='btext-green-600'>
+                V poriadku
               </IonCardContent>
             </IonCard>
             <IonCard className='mb-8'>
@@ -230,10 +232,10 @@ const OrderPage = () => {
                 ></IonInput>
               </div>
               <IonCardContent className='bg-red-100 text-red-600'>
-                Vyplnte ...
+                Chyba
               </IonCardContent>
             </IonCard>
-            <IonCard className='mb-8'>
+            <IonCard className='bg-red-100 mb-8'>
               <IonCardHeader className=''>
                 <IonCardTitle className='flex justify-between'>
                   Card without input red
@@ -248,9 +250,51 @@ const OrderPage = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
                 neque quasi temporibus?
               </IonCardContent>
-              <IonCardContent className='bg-red-100 text-red-600'>
-                Vyplnte ...
+              <IonCardContent className='text-red-600'>Chyba</IonCardContent>
+            </IonCard>
+            <IonCard className='mb-8'>
+              <IonCardHeader className=''>
+                <IonCardTitle className='flex justify-between'>
+                  Zadajte sluzbu
+                  <IonIcon
+                    color='primary'
+                    size='medium'
+                    icon={chatbubbleOutline}
+                  ></IonIcon>
+                </IonCardTitle>
+              </IonCardHeader>
+              <IonCardContent>
+                Podpiste a nahrajte subory pomocou aplikacie autogram od sk
+                digital
               </IonCardContent>
+              <div className='p-4'>
+                <IonInput
+                  label='sluzba'
+                  name='service'
+                  value={formData.service}
+                  onIonInput={handleInputChange}
+                ></IonInput>
+              </div>
+              <IonCardContent className='bg-gray-100 text-gray-600'>
+                None
+              </IonCardContent>
+            </IonCard>
+            <IonCard className='bg-gray-100 mb-8'>
+              <IonCardHeader className=''>
+                <IonCardTitle className='flex justify-between'>
+                  Card without input gray
+                  <IonIcon
+                    color='primary'
+                    size='medium'
+                    icon={chatbubbleOutline}
+                  ></IonIcon>
+                </IonCardTitle>
+              </IonCardHeader>
+              <IonCardContent>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+                neque quasi temporibus?
+              </IonCardContent>
+              <IonCardContent className='text-gray-600'>None</IonCardContent>
             </IonCard>
             <IonFab className='py-6 px-2 w-full bg-gray-100 fixed bottom-0 right-0'>
               <IonButton type='submit' expand='block'>
