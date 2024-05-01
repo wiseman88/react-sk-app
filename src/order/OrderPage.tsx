@@ -63,6 +63,24 @@ const OrderPage = () => {
     }
   }
 
+  const fetchOrderSteps = async () => {
+    try {
+      const response = await fetch('/mock/order/steps.json')
+
+      const data = await response.json()
+
+      setFormData({
+        name: data[0].input,
+        email: data[1].input,
+        subjects: data[2].input,
+        files: data[3].input,
+        service: data[4].input,
+      })
+    } catch (error) {
+      console.error('Error fetching order inputs data:', error)
+    }
+  }
+
   return (
     <IonPage>
       <OrderHeader />
@@ -307,9 +325,7 @@ const OrderPage = () => {
                 buttons={[
                   {
                     text: 'Áno',
-                    handler: () => {
-                      console.log('Fetch data from steps.json')
-                    },
+                    handler: fetchOrderSteps,
                   },
                   {
                     text: 'Nie',
