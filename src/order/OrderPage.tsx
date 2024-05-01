@@ -1,5 +1,6 @@
 import {
   InputChangeEventDetail,
+  IonAlert,
   IonButton,
   IonCard,
   IonCardContent,
@@ -297,9 +298,26 @@ const OrderPage = () => {
               <IonCardContent className='text-gray-600'>None</IonCardContent>
             </IonCard>
             <IonFab className='py-6 px-2 w-full bg-gray-100 fixed bottom-0 right-0'>
-              <IonButton type='submit' expand='block'>
+              <IonButton id='submitBtn' type='submit' expand='block'>
                 odoslat na spracovanie
               </IonButton>
+              <IonAlert
+                trigger='submitBtn'
+                header='Chceš pokračovať v upravovaní?'
+                buttons={[
+                  {
+                    text: 'Áno',
+                    role: 'cancel',
+                    handler: () => {
+                      console.log('Fetch data from steps.json')
+                    },
+                  },
+                  {
+                    text: 'Nie',
+                    role: 'confirm',
+                  },
+                ]}
+              ></IonAlert>
             </IonFab>
           </form>
         </div>
