@@ -307,14 +307,12 @@ const OrderPage = () => {
                 buttons={[
                   {
                     text: 'Áno',
-                    role: 'cancel',
                     handler: () => {
                       console.log('Fetch data from steps.json')
                     },
                   },
                   {
                     text: 'Nie',
-                    role: 'confirm',
                   },
                 ]}
               ></IonAlert>
