@@ -1,5 +1,4 @@
 import {
-  InputChangeEventDetail,
   IonAlert,
   IonButton,
   IonCard,
@@ -17,69 +16,11 @@ import {
 } from '@ionic/react'
 import OrderHeader from './OrderHeader'
 import { chatbubbleOutline } from 'ionicons/icons'
-import { useState } from 'react'
-
-type FormData = {
-  name: string
-  email: string
-  subjects: string
-  files: string
-  service: string
-}
+import useFormHandling from './useFormHandling'
 
 const OrderPage = () => {
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    subjects: '',
-    files: '',
-    service: '',
-  })
-
-  const handleInputChange = (e: CustomEvent<InputChangeEventDetail>) => {
-    const { name, value } = e.target as HTMLInputElement
-    setFormData({ ...formData, [name]: value })
-  }
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-    try {
-      const response = await fetch('/mock/order/submit.POST.json', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
-
-      if (!response.ok) {
-        throw new Error('Failed to submit form')
-      }
-
-      console.log(formData)
-    } catch (error: any) {
-      console.error('Error submitting form:', error.message)
-    }
-  }
-
-  const fetchOrderSteps = async () => {
-    try {
-      const response = await fetch('/mock/order/steps.json')
-
-      const data = await response.json()
-
-      setFormData({
-        name: data[0].input,
-        email: data[1].input,
-        subjects: data[2].input,
-        files: data[3].input,
-        service: data[4].input,
-      })
-    } catch (error) {
-      console.error('Error fetching order inputs data:', error)
-    }
-  }
+  const { formData, handleInputChange, saveInputs, fetchOrderSteps } =
+    useFormHandling()
 
   return (
     <IonPage>
@@ -92,7 +33,7 @@ const OrderPage = () => {
         </IonHeader>
         <div className='p-6'>
           <p className='text-center text-gray-400'>Vyplnte vstupne udaje</p>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={saveInputs}>
             <IonCard className='mb-8'>
               <IonCardHeader className=''>
                 <IonCardTitle className='flex justify-between'>
