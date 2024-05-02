@@ -1,32 +1,31 @@
 import {
   IonContent,
   IonHeader,
+  IonIcon,
   IonPage,
   IonSearchbar,
+  IonSpinner,
   IonTitle,
   IonToolbar,
 } from '@ionic/react'
 import ProductsList from './ProductsList'
 import { useEffect, useState } from 'react'
-import { Product } from '../_shared/types'
 import ProductsHeader from './ProductsHeader'
+import useFetchProducts from './useFetchProducts'
+import { alertCircleOutline } from 'ionicons/icons'
 
 const ProductsPage = () => {
-  const [products, setProducts] = useState<Product[]>([])
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
+  const {
+    loading,
+    error,
+    products,
+    filteredProducts,
+    setFilteredProducts,
+    fetchProducts,
+  } = useFetchProducts()
   const [searchQuery, setSearchQuery] = useState<string>('')
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch('/mock/products/products.GET.json')
-        const data = await response.json()
-        setProducts(data.products)
-        setFilteredProducts(data.products)
-      } catch (error) {
-        console.error('Error fetching products:', error)
-      }
-    }
     fetchProducts()
   }, [])
 
@@ -80,7 +79,18 @@ const ProductsPage = () => {
             value={searchQuery}
             onIonInput={(e) => handleSearch(e.detail.value!)}
           />
-          <ProductsList products={filteredProducts} query={searchQuery} />
+          {loading ? (
+            <div className='absolute h-screen inset-0 -z-10 flex items-center justify-center'>
+              <IonSpinner color='primary'></IonSpinner>
+            </div>
+          ) : error ? (
+            <p className='flex items-center gap-3 m-2 p-2 rounded bg-red-100 text-red-600'>
+              <IonIcon size='large' icon={alertCircleOutline}></IonIcon>
+              <span>Vyskytla sa chyba pri nacitani produktov.</span>
+            </p>
+          ) : (
+            <ProductsList products={filteredProducts} query={searchQuery} />
+          )}
         </div>
       </IonContent>
     </IonPage>
