@@ -18,12 +18,14 @@ import { useHistory, useParams } from 'react-router'
 import { useEffect, useState } from 'react'
 import { Product } from '../_shared/types'
 import {
+  alertCircleOutline,
   arrowDown,
   cartOutline,
   chevronForward,
   locationOutline,
 } from 'ionicons/icons'
 import ProductHeader from './ProductHeader'
+import Alert from '../components/Alert'
 
 type RouteParams = {
   id: string
@@ -167,9 +169,12 @@ const ProductPage = () => {
               </div>
             </div>
           ) : (
-            <p className='bg-orange-100 text-orange-600 text-center p-4 rounded'>
-              Nepodarilo sa najst vami zvolený produkt
-            </p>
+            <Alert
+              icon={alertCircleOutline}
+              text='Nepodarilo sa najst vami zvolený produkt'
+              bgColor='bg-orange-100'
+              textColor='text-orange-600'
+            />
           )}
         </div>
       </IonContent>

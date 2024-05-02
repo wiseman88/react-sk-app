@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react'
 import ProductsHeader from './ProductsHeader'
 import useFetchProducts from './useFetchProducts'
 import { alertCircleOutline } from 'ionicons/icons'
+import Alert from '../components/Alert'
 
 const ProductsPage = () => {
   const {
@@ -84,10 +85,12 @@ const ProductsPage = () => {
               <IonSpinner color='primary'></IonSpinner>
             </div>
           ) : error ? (
-            <p className='flex items-center gap-3 m-2 p-2 rounded bg-red-100 text-red-600'>
-              <IonIcon size='large' icon={alertCircleOutline}></IonIcon>
-              <span>Vyskytla sa chyba pri nacitani produktov.</span>
-            </p>
+            <Alert
+              icon={alertCircleOutline}
+              text='Vyskytla sa chyba pri nacitani produktov'
+              bgColor='bg-red-100'
+              textColor='text-red-600'
+            />
           ) : (
             <ProductsList products={filteredProducts} query={searchQuery} />
           )}
