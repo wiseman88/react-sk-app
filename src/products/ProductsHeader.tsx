@@ -20,7 +20,7 @@ const ProductsHeader = () => {
             />
             <IonTitle className='text-center'>Slovensko 2.0</IonTitle>
             <div className='flex items-center space-x-3'>
-              <Link to={'/login'}>
+              <Link className='flex items-center' to={'/login'}>
                 <IonIcon icon={personOutline} className='size-7'></IonIcon>
               </Link>
               <IconWithBadge
