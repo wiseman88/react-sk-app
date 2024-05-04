@@ -1,6 +1,10 @@
-import { IonHeader, IonTitle, IonToolbar } from '@ionic/react'
+import { IonHeader, IonIcon, IonTitle, IonToolbar } from '@ionic/react'
 import IconWithBadge from '../components/IconWithBadge'
-import { calendarClearOutline, notificationsOutline } from 'ionicons/icons'
+import {
+  calendarClearOutline,
+  notificationsOutline,
+  personOutline,
+} from 'ionicons/icons'
 
 const ProductsHeader = () => {
   return (
@@ -14,11 +18,14 @@ const ProductsHeader = () => {
               color='primary'
             />
             <IonTitle className='text-center'>Slovensko 2.0</IonTitle>
-            <IconWithBadge
-              icon={notificationsOutline}
-              badgeContent={3}
-              color='warning'
-            />
+            <div className='flex items-center space-x-3'>
+              <IonIcon icon={personOutline} className='size-7'></IonIcon>
+              <IconWithBadge
+                icon={notificationsOutline}
+                badgeContent={3}
+                color='warning'
+              />
+            </div>
           </div>
         </IonToolbar>
       </IonHeader>
