@@ -13,7 +13,7 @@ const ProductsHeader = () => {
               badgeContent={12}
               color='primary'
             />
-            <IonTitle>Slovensko 2.0</IonTitle>
+            <IonTitle className='text-center'>Slovensko 2.0</IonTitle>
             <IconWithBadge
               icon={notificationsOutline}
               badgeContent={3}
