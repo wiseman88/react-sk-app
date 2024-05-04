@@ -5,6 +5,7 @@ import {
   notificationsOutline,
   personOutline,
 } from 'ionicons/icons'
+import { Link } from 'react-router-dom'
 
 const ProductsHeader = () => {
   return (
@@ -19,7 +20,9 @@ const ProductsHeader = () => {
             />
             <IonTitle className='text-center'>Slovensko 2.0</IonTitle>
             <div className='flex items-center space-x-3'>
-              <IonIcon icon={personOutline} className='size-7'></IonIcon>
+              <Link to={'/login'}>
+                <IonIcon icon={personOutline} className='size-7'></IonIcon>
+              </Link>
               <IconWithBadge
                 icon={notificationsOutline}
                 badgeContent={3}
