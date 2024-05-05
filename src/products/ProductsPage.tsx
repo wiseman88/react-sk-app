@@ -22,7 +22,7 @@ const ProductsPage = () => {
     fetchProducts()
   }, [])
 
-  const handleSearch = (query: string) => {
+  const onSearch = (query: string) => {
     setSearchQuery(query)
     const filtered = products.filter((product) =>
       normalizeText(product.name).toLowerCase().includes(query.toLowerCase())
@@ -38,7 +38,7 @@ const ProductsPage = () => {
           <IonSearchbar
             placeholder='Čo za teba vybavíme?'
             value={searchQuery}
-            onIonInput={(e) => handleSearch(e.detail.value!)}
+            onIonInput={(e) => onSearch(e.detail.value!)}
           />
           {loading ? (
             <div className='absolute h-screen inset-0 -z-10 flex items-center justify-center'>
