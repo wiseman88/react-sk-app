@@ -69,11 +69,6 @@ const ProductsPage = () => {
     <IonPage>
       <ProductsHeader />
       <IonContent fullscreen>
-        <IonHeader collapse='condense'>
-          <IonToolbar>
-            <IonTitle size='large'>Slovensko 2.0</IonTitle>
-          </IonToolbar>
-        </IonHeader>
         <div className='mt-4'>
           <IonSearchbar
             placeholder='Čo za teba vybavíme?'

@@ -89,11 +89,6 @@ const ProductPage = () => {
     <IonPage>
       <ProductHeader productName={product?.name} />
       <IonContent fullscreen>
-        <IonHeader collapse='condense'>
-          <IonToolbar>
-            <IonTitle size='large'>{product?.name}</IonTitle>
-          </IonToolbar>
-        </IonHeader>
         <div className='p-6'>
           {product ? (
             <div>
