@@ -80,9 +80,7 @@ const ProductPage = () => {
         } else {
           console.error(`Product with ID ${id} not found`)
         }
-      } catch (error) {
-        console.error('Error fetching products:', error)
-      }
+      } catch (error) {}
     }
     fetchProduct()
   }, [id])
