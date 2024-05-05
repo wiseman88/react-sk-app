@@ -1,13 +1,4 @@
-import {
-  IonContent,
-  IonHeader,
-  IonIcon,
-  IonPage,
-  IonSearchbar,
-  IonSpinner,
-  IonTitle,
-  IonToolbar,
-} from '@ionic/react'
+import { IonContent, IonPage, IonSearchbar, IonSpinner } from '@ionic/react'
 import ProductsList from './ProductsList'
 import { useEffect, useState } from 'react'
 import ProductsHeader from './ProductsHeader'
