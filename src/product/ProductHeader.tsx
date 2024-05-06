@@ -6,11 +6,11 @@ import {
   IonToolbar,
 } from '@ionic/react'
 
-type productNameProps = {
+type Props = {
   productName: string | undefined
 }
 
-const ProductHeader = (props: productNameProps) => {
+const ProductHeader = (props: Props) => {
   return (
     <IonHeader>
       <IonToolbar>

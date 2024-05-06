@@ -1,14 +1,14 @@
 import { IonIcon, IonItem, IonLabel } from '@ionic/react'
 import { chevronForwardOutline } from 'ionicons/icons'
 
-type ProductItemProps = {
+type Props = {
   productTitle: string
   categories: string
   fees: number
   additionalFees: number
 }
 
-const ProductItem = (props: ProductItemProps) => {
+const ProductItem = (props: Props) => {
   return (
     <>
       <IonItem>

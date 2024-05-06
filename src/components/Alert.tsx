@@ -1,13 +1,13 @@
 import { IonIcon } from '@ionic/react'
 
-type AlertProps = {
+type Props = {
   icon: string
   text: string
   bgColor?: string
   textColor?: string
 }
 
-const Alert = (props: AlertProps) => {
+const Alert = (props: Props) => {
   return (
     <p
       className={`flex items-center gap-3 m-2 p-2 rounded ${props.bgColor} ${props.textColor}`}

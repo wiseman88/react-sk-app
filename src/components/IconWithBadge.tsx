@@ -1,13 +1,13 @@
 import { IonBadge, IonIcon } from '@ionic/react'
 
-type IconWithBadgeProps = {
+type Props = {
   icon: string
   badgeContent: number
   color: string | 'primary'
   size?: string
 }
 
-const IconWithBadge = (props: IconWithBadgeProps) => {
+const IconWithBadge = (props: Props) => {
   return (
     <div className='relative flex'>
       <IonIcon icon={props.icon} className={props.size || 'size-7'}></IonIcon>

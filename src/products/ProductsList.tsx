@@ -3,11 +3,11 @@ import ProductItem from '../product/ProductItem'
 import { Link } from 'react-router-dom'
 import { Product } from '../_shared/types'
 
-type ProductsListProps = {
+type Props = {
   products: Product[]
 }
 
-const ProductsList = (props: ProductsListProps) => {
+const ProductsList = (props: Props) => {
   return (
     <>
       <IonList>
