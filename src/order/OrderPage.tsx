@@ -16,11 +16,11 @@ import {
 } from '@ionic/react'
 import OrderHeader from './OrderHeader'
 import { chatbubbleOutline } from 'ionicons/icons'
-import useFormHandling from './useFormHandling'
+import useOrder from './useOrder'
 
 const OrderPage = () => {
   const { formData, handleInputChange, saveInputs, fetchOrderSteps } =
-    useFormHandling()
+    useOrder()
 
   return (
     <IonPage>
