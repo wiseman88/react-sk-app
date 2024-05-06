@@ -49,25 +49,15 @@ const LoginPage = () => {
             <IonButton className='mx-0 mb-4' type='submit' expand='block'>
               Prihlasit
             </IonButton>
-            <IonButton
-              className='mx-0 mb-4'
-              color='danger'
-              type='submit'
-              expand='block'
-              onClick={handleAutoFill}
-            >
-              Autofill input values
-            </IonButton>
           </form>
-          <IonButton
-            className='mx-0'
-            color='success'
-            type='submit'
-            expand='block'
-            onClick={clearInputs}
-          >
-            <Link to='/home'>Navrat spat</Link>
-          </IonButton>
+          <div className='flex items-center justify-between'>
+            <span className='mb-4  text-red-500' onClick={handleAutoFill}>
+              Autofill input values
+            </span>
+            <span className='mb-4  text-blue-500' onClick={clearInputs}>
+              <Link to='/home'>Navrat spat</Link>
+            </span>
+          </div>
         </div>
       </div>
     </IonPage>
