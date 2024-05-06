@@ -10,7 +10,7 @@ type FormData = {
 }
 
 
-const useOrderApi = () => {
+const useFormHandling = () => {
     const [formData, setFormData] = useState<FormData>({
         name: '',
         email: '',
@@ -72,4 +72,4 @@ const useOrderApi = () => {
     }
 }
 
-export default useOrderApi
+export default useFormHandling
