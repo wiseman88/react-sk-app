@@ -19,8 +19,7 @@ import { chatbubbleOutline } from 'ionicons/icons'
 import useOrder from './useOrder'
 
 const OrderPage = () => {
-  const { formData, handleInputChange, saveInputs, fetchOrderSteps } =
-    useOrder()
+  const { formData, onChange, saveInputs, fetchOrderSteps } = useOrder()
 
   return (
     <IonPage>
@@ -54,7 +53,7 @@ const OrderPage = () => {
                   label='Nazov'
                   name='name'
                   value={formData.name}
-                  onIonInput={handleInputChange}
+                  onIonInput={onChange}
                 ></IonInput>
               </div>
               <IonCardContent className='bg-orange-100 text-orange-600'>
@@ -99,7 +98,7 @@ const OrderPage = () => {
                   label='Email'
                   name='email'
                   value={formData.email}
-                  onIonInput={handleInputChange}
+                  onIonInput={onChange}
                 ></IonInput>
               </div>
               <IonCardContent className='bg-blue-100 text-blue-600'>
@@ -142,7 +141,7 @@ const OrderPage = () => {
                   label='Predmety'
                   name='subjects'
                   value={formData.subjects}
-                  onIonInput={handleInputChange}
+                  onIonInput={onChange}
                 ></IonInput>
               </div>
               <IonCardContent className='bg-green-100 text-green-600'>
@@ -188,7 +187,7 @@ const OrderPage = () => {
                   label='Subory'
                   name='files'
                   value={formData.files}
-                  onIonInput={handleInputChange}
+                  onIonInput={onChange}
                 ></IonInput>
               </div>
               <IonCardContent className='bg-red-100 text-red-600'>
@@ -232,7 +231,7 @@ const OrderPage = () => {
                   label='sluzba'
                   name='service'
                   value={formData.service}
-                  onIonInput={handleInputChange}
+                  onIonInput={onChange}
                 ></IonInput>
               </div>
               <IonCardContent className='bg-gray-100 text-gray-600'>

@@ -6,7 +6,7 @@ const useLogin = () => {
         password: '',
     })
 
-    const handleChange = (field: string, value: string) => {
+    const onChange = (field: string, value: string) => {
         setCredentials((prev) => ({ ...prev, [field]: value }))
     }
 
@@ -26,7 +26,7 @@ const useLogin = () => {
 
     return {
         credentials,
-        handleChange,
+        onChange,
         handleAutoFill,
         clearInputs
     }

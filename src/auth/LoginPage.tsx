@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import useLogin from './useLogin'
 
 const LoginPage = () => {
-  const { credentials, handleChange, handleAutoFill, clearInputs } = useLogin()
+  const { credentials, onChange, handleAutoFill, clearInputs } = useLogin()
 
   return (
     <IonPage>
@@ -15,7 +15,7 @@ const LoginPage = () => {
           <form onSubmit={(e) => e.preventDefault()} className='w-full'>
             <IonInput
               value={credentials.email}
-              onIonChange={(e) => handleChange('email', e.detail.value ?? '')}
+              onIonChange={(e) => onChange('email', e.detail.value ?? '')}
               label='Email'
               labelPlacement='floating'
               fill='outline'
@@ -25,9 +25,7 @@ const LoginPage = () => {
             <IonInput
               value={credentials.password}
               type='password'
-              onIonChange={(e) =>
-                handleChange('password', e.detail.value ?? '')
-              }
+              onIonChange={(e) => onChange('password', e.detail.value ?? '')}
               label='Heslo'
               labelPlacement='floating'
               fill='outline'

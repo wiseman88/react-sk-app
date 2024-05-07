@@ -19,7 +19,7 @@ const useOrder = () => {
         service: '',
     })
 
-    const handleInputChange = (e: CustomEvent<InputChangeEventDetail>) => {
+    const onChange = (e: CustomEvent<InputChangeEventDetail>) => {
         const { name, value } = e.target as HTMLInputElement
         setFormData({ ...formData, [name]: value })
     }
@@ -66,7 +66,7 @@ const useOrder = () => {
 
     return {
         formData,
-        handleInputChange,
+        onChange,
         saveInputs,
         fetchOrderSteps
     }
