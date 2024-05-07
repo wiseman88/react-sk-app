@@ -1,23 +1,9 @@
 import { IonButton, IonInput, IonPage } from '@ionic/react'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import useLogin from './useLogin'
 
 const LoginPage = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-
-  const handleAutoFill = (
-    e: React.MouseEvent<HTMLIonButtonElement, MouseEvent>
-  ) => {
-    e.preventDefault()
-    setEmail('andrej.danko@kapitan.ru')
-    setPassword('n3vidimSema4?')
-  }
-
-  const clearInputs = () => {
-    setEmail('')
-    setPassword('')
-  }
+  const { credentials, handleChange, handleAutoFill, clearInputs } = useLogin()
 
   return (
     <IonPage>
@@ -28,8 +14,8 @@ const LoginPage = () => {
           </h2>
           <form onSubmit={(e) => e.preventDefault()} className='w-full'>
             <IonInput
-              value={email}
-              onIonChange={(e) => setEmail(e.detail.value!)}
+              value={credentials.email}
+              onIonChange={(e) => handleChange('email', e.detail.value ?? '')}
               label='Email'
               labelPlacement='floating'
               fill='outline'
@@ -37,9 +23,11 @@ const LoginPage = () => {
               className='mb-4'
             ></IonInput>
             <IonInput
-              value={password}
+              value={credentials.password}
               type='password'
-              onIonChange={(e) => setPassword(e.detail.value!)}
+              onIonChange={(e) =>
+                handleChange('password', e.detail.value ?? '')
+              }
               label='Heslo'
               labelPlacement='floating'
               fill='outline'
