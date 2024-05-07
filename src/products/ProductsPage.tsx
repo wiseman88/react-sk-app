@@ -6,7 +6,7 @@ import useFetchProducts from './useFetchProducts'
 import { alertCircleOutline } from 'ionicons/icons'
 import Alert from '../components/Alert'
 import { normalizeText } from '../_shared/utilities'
-import NothingFound from './NothingFound'
+import ProductsNotFound from './ProductsNotFound'
 
 const ProductsPage = () => {
   const {
@@ -55,7 +55,7 @@ const ProductsPage = () => {
           ) : filteredProducts && filteredProducts.length > 0 ? (
             <ProductsList products={filteredProducts} />
           ) : (
-            <NothingFound query={searchQuery} />
+            <ProductsNotFound query={searchQuery} />
           )}
         </div>
       </IonContent>

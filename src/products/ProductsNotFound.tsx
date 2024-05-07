@@ -12,7 +12,7 @@ type Props = {
   query: string
 }
 
-const NothingFound = (props: Props) => {
+const ProductsNotFound = (props: Props) => {
   return (
     <>
       <IonCard>
@@ -41,4 +41,4 @@ const NothingFound = (props: Props) => {
   )
 }
 
-export default NothingFound
+export default ProductsNotFound
