@@ -35,23 +35,17 @@ const LoginPage = () => {
           </h2>
           <form onSubmit={(e) => e.preventDefault()} className='w-full'>
             <IonInput
-              value={credentials.email}
-              onIonChange={(e) => onChange('email', e.detail.value ?? '')}
-              label='Email'
-              labelPlacement='floating'
-              fill='outline'
-              placeholder='Zadajte email'
               className='mb-4'
+              value={credentials.email} label='Email' labelPlacement='floating' fill='outline'
+              onIonChange={(e) => onChange('email', e.detail.value ?? '')}
+              placeholder='Zadajte email'
             ></IonInput>
             <IonInput
-              value={credentials.password}
-              type='password'
-              onIonChange={(e) => onChange('password', e.detail.value ?? '')}
-              label='Heslo'
-              labelPlacement='floating'
-              fill='outline'
-              placeholder='Zadajte heslo'
               className='mb-4'
+              value={credentials.password} label='Heslo' labelPlacement='floating' fill='outline'
+              onIonChange={(e) => onChange('password', e.detail.value ?? '')}
+              type='password'
+              placeholder='Zadajte heslo'
             ></IonInput>
             <IonButton className='mx-0 mb-4' type='submit' expand='block'>
               Prihlasit
