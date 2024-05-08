@@ -1,5 +1,5 @@
 import { IonList } from '@ionic/react'
-import ProductItem from '../product/ProductItem'
+import ProductsItem from './ProductsItem'
 import { Link } from 'react-router-dom'
 import { Product } from '../_shared/types'
 
@@ -13,7 +13,7 @@ const ProductsList = (props: Props) => {
       <IonList>
         {props.products.map((product: Product) => (
           <Link to={`/products/${product.id}`} key={product.id}>
-            <ProductItem
+            <ProductsItem
               key={product.id}
               productTitle={product.name}
               categories={product.categories.join(', ')}
