@@ -5,7 +5,7 @@ import ProductsHeader from './ProductsHeader'
 import useFetchProducts from './useFetchProducts'
 import { alertCircleOutline } from 'ionicons/icons'
 import Alert from '../components/Alert'
-import { normalizeText } from '../_shared/utilities'
+import { removeDiacritics } from './removeDiacritics'
 import ProductsNotFound from './ProductsNotFound'
 
 const ProductsPage = () => {
@@ -26,7 +26,7 @@ const ProductsPage = () => {
   const onSearch = (query: string) => {
     setSearchQuery(query)
     const filtered = products.filter((product) =>
-      normalizeText(product.name).toLowerCase().includes(query.toLowerCase())
+      removeDiacritics(product.name).toLowerCase().includes(query.toLowerCase())
     )
     setFilteredProducts(filtered)
   }

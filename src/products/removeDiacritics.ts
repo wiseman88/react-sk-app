@@ -1,4 +1,4 @@
-export const normalizeText = (inputString: string): string => {
+export const removeDiacritics = (inputString: string): string => {
     const regex: RegExp = /[čšžťľťďäáéíĺňóôöőúýů]/g
     const charMap: { [key: string]: string } = {
         č: 'c',
