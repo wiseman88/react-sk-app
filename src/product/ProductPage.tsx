@@ -1,28 +1,12 @@
 import {
-  IonButton,
-  IonCard,
-  IonCardContent,
-  IonCardHeader,
-  IonCardTitle,
   IonContent,
-  IonHeader,
-  IonIcon,
-  IonItem,
-  IonLabel,
-  IonList,
   IonPage,
-  IonTitle,
-  IonToolbar,
 } from '@ionic/react'
 import { useHistory, useParams } from 'react-router'
 import { useEffect, useState } from 'react'
 import { Product } from '../_shared/types'
 import {
   alertCircleOutline,
-  arrowDown,
-  cartOutline,
-  chevronForward,
-  locationOutline,
 } from 'ionicons/icons'
 import ProductHeader from './ProductHeader'
 import Alert from '../components/Alert'
@@ -34,8 +18,9 @@ type RouteParams = {
 
 const ProductPage = () => {
   const { id } = useParams<RouteParams>()
-  const [product, setProduct] = useState<Product | null>(null)
+  const [product, setProduct] = useState<Product>()
   const [orderId, setOrderId] = useState<number>()
+  const [fetchError, setFetchError] = useState<string>()
   const history = useHistory()
 
   const onOrderRequest = async () => {
@@ -62,9 +47,11 @@ const ProductPage = () => {
       if (product) {
         setProduct(product)
       } else {
-        console.error(`Product with ID ${id} not found`)
+        setFetchError(`Product with ID ${id} not found`)
       }
-    } catch (error) { }
+    } catch (error) {
+      setFetchError(`Error fetching products: ${error}`)
+    }
   }
 
   useEffect(() => {
@@ -76,16 +63,18 @@ const ProductPage = () => {
       <ProductHeader productName={product?.name} />
       <IonContent fullscreen>
         <div className='p-6'>
-          {product ? (
-            <ProductItem product={product} onOrderRequest={onOrderRequest} />
-          ) : (
-            <Alert
-              icon={alertCircleOutline}
-              text='Nepodarilo sa najst vami zvolený produkt'
-              bgColor='bg-orange-100'
-              textColor='text-orange-600'
-            />
-          )}
+          {
+            fetchError ? (
+              <Alert
+                icon={alertCircleOutline}
+                text='Nepodarilo sa najst vami zvolený produkt'
+                bgColor='bg-orange-100'
+                textColor='text-orange-600'
+              />
+            ) : (
+              product && <ProductItem product={product} onOrderRequest={onOrderRequest} />
+            )
+          }
         </div>
       </IonContent>
     </IonPage>
