@@ -1,9 +1,30 @@
 import { IonButton, IonInput, IonPage } from '@ionic/react'
 import { Link } from 'react-router-dom'
-import useLogin from './useLogin'
+import { useState } from 'react'
 
 const LoginPage = () => {
-  const { credentials, onChange, handleAutoFill, clearInputs } = useLogin()
+  const [credentials, setCredentials] = useState({
+    email: '',
+    password: '',
+  })
+
+  const onChange = (field: string, value: string) => {
+    setCredentials((prev) => ({ ...prev, [field]: value }))
+  }
+
+  const handleAutoFill = (
+    e: React.MouseEvent<HTMLIonButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault()
+    setCredentials({
+      email: 'andrej.danko@kapitan.ru',
+      password: 'n3vidimSema4?',
+    })
+  }
+
+  const clearInputs = () => {
+    setCredentials({ email: '', password: '' })
+  }
 
   return (
     <IonPage>
