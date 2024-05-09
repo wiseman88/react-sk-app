@@ -15,15 +15,15 @@ const OrderStep = (props: Props) => {
     const setColor = () => {
         switch (props.status) {
             case 'vyplnte':
-                return 'orange'
+                return 'orange';
             case 'spracovanie':
-                return 'blue'
+                return 'blue';
             case 'v poriadku':
-                return 'green'
+                return 'green';
             case 'chyba':
-                return 'red'
+                return 'red';
             default:
-                return 'gray'
+                return 'gray';
         }
     }
 
