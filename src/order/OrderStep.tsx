@@ -12,50 +12,47 @@ type Props = {
 }
 
 const OrderStep = (props: Props) => {
-    const setColor = () => {
+    const setStatusDetails = () => {
         switch (props.status) {
             case 'vyplnte':
-                return 'orange';
+                return {
+                    bgColor: 'bg-orange-100',
+                    textColor: 'text-orange-500',
+                    name: 'name',
+                    label: 'Nazov'
+                }
             case 'spracovanie':
-                return 'blue';
+                return {
+                    bgColor: 'bg-blue-100',
+                    textColor: 'text-blue-500',
+                    name: 'email',
+                    label: 'Email'
+                }
             case 'v poriadku':
-                return 'green';
+                return {
+                    bgColor: 'bg-green-100',
+                    textColor: 'text-green-500',
+                    name: 'subjects',
+                    label: 'Subjekt'
+                }
             case 'chyba':
-                return 'red';
+                return {
+                    bgColor: 'bg-red-100',
+                    textColor: 'text-red-500',
+                    name: 'files',
+                    label: 'Subory'
+                }
             default:
-                return 'gray';
+                return {
+                    bgColor: 'bg-gray-100',
+                    textColor: 'text-gray-500',
+                    name: 'services',
+                    label: 'Sluzby'
+                }
         }
     }
 
-    const setName = () => {
-        switch (props.status) {
-            case 'vyplnte':
-                return 'name'
-            case 'spracovanie':
-                return 'email'
-            case 'v poriadku':
-                return 'subjects'
-            case 'chyba':
-                return 'files'
-            default:
-                return 'services'
-        }
-    }
-
-    const setLabel = () => {
-        switch (props.status) {
-            case 'vyplnte':
-                return 'Nazov'
-            case 'spracovanie':
-                return 'Email'
-            case 'v poriadku':
-                return 'Subjekt'
-            case 'chyba':
-                return 'Subory'
-            default:
-                return 'Sluzby'
-        }
-    }
+    const { bgColor, textColor, name, label } = setStatusDetails()
 
     return (
         <>
@@ -76,17 +73,17 @@ const OrderStep = (props: Props) => {
                 </IonCardContent>
                 <div className='p-4'>
                     <IonInput
-                        label={setLabel()}
-                        name={setName()}
+                        label={label}
+                        name={name}
                         value={props.formData.name}
                         onIonInput={props.onChange}
                     ></IonInput>
                 </div>
-                <IonCardContent className={`bg-${setColor()}-100 text-${setColor()}-600`}>
+                <IonCardContent className={`${bgColor}` + ' ' + `${textColor}`}>
                     {props.status}
                 </IonCardContent>
             </IonCard>
-            <IonCard className={`bg-${setColor()}-100 mb-8`}>
+            <IonCard className={`${bgColor} mb-8`}>
                 <IonCardHeader className=''>
                     <IonCardTitle className='flex justify-between'>
                         Card without input color
