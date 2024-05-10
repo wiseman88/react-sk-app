@@ -2,7 +2,7 @@ import { InputChangeEventDetail, IonCard, IonCardContent, IonCardHeader, IonCard
 import { chatbubbleOutline } from "ionicons/icons"
 
 type FormData = {
-    name: string
+    [key: string]: string
 }
 
 type Props = {
@@ -75,7 +75,7 @@ const OrderStep = (props: Props) => {
                     <IonInput
                         label={label}
                         name={name}
-                        value={props.formData.name}
+                        value={props.formData[name]}
                         onIonInput={props.onChange}
                     ></IonInput>
                 </div>
