@@ -7,13 +7,14 @@ type FormData = {
 
 type Props = {
     formData: FormData
-    status: string
+    status: string[]
+    id: number
     onChange: (e: CustomEvent<InputChangeEventDetail>) => void
 }
 
 const OrderStep = (props: Props) => {
     const setStatusDetails = () => {
-        switch (props.status) {
+        switch (props.status[props.id]) {
             case 'vyplnte':
                 return {
                     bgColor: 'bg-orange-100',
@@ -80,7 +81,7 @@ const OrderStep = (props: Props) => {
                     ></IonInput>
                 </div>
                 <IonCardContent className={`${bgColor}` + ' ' + `${textColor}`}>
-                    {props.status}
+                    {props.status[props.id]}
                 </IonCardContent>
             </IonCard>
             <IonCard className={`${bgColor} mb-8`}>

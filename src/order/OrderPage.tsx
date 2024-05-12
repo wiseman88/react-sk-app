@@ -29,8 +29,12 @@ const OrderPage = () => {
         <div className='p-6'>
           <p className='text-center text-gray-400'>Vyplnte vstupne udaje</p>
           <form onSubmit={saveInputs}>
-            {status.map((status, key) => (
-              <OrderStep key={key} formData={formData} status={status} onChange={onChange} />
+            {Object.keys(formData).map((key, index) => (
+              <OrderStep
+                key={key} id={index}
+                status={status} formData={formData}
+                onChange={onChange}
+              />
             ))}
             <IonFab className='py-6 px-2 w-full bg-gray-100 fixed bottom-0 right-0'>
               <IonButton id='submitBtn' type='submit' expand='block'>
