@@ -19,6 +19,8 @@ const useOrder = () => {
         service: '',
     })
 
+    const [error, setError] = useState<string | null>(null)
+
     const onChange = (e: CustomEvent<InputChangeEventDetail>) => {
         const { name, value } = e.target as HTMLInputElement
         setFormData({ ...formData, [name]: value })
@@ -37,12 +39,10 @@ const useOrder = () => {
             })
 
             if (!response.ok) {
-                throw new Error('Failed to submit form')
+                setError(`Failed to submit form: ${response.statusText}`);
             }
-
-            console.log(formData)
         } catch (error: any) {
-            console.error('Error submitting form:', error.message)
+            setError('Error submitting form: ' + error.message)
         }
     }
 
@@ -60,7 +60,7 @@ const useOrder = () => {
                 service: data[4].input,
             })
         } catch (error) {
-            console.error('Error fetching order inputs data:', error)
+            setError('Error fetching order inputs data')
         }
     }
 
@@ -68,7 +68,8 @@ const useOrder = () => {
         formData,
         onChange,
         saveInputs,
-        fetchOrderSteps
+        fetchOrderSteps,
+        error
     }
 }
 

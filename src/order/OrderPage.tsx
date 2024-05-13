@@ -11,9 +11,10 @@ import {
 import OrderHeader from './OrderHeader'
 import useOrder from './useOrder'
 import OrderStep from './OrderStep'
+import Alert from '../components/Alert'
 
 const OrderPage = () => {
-  const { formData, onChange, saveInputs, fetchOrderSteps } = useOrder()
+  const { formData, onChange, saveInputs, fetchOrderSteps, error } = useOrder()
 
   const status = ['vyplnte', 'spracovanie', 'v poriadku', 'chyba', 'none']
 
@@ -28,6 +29,7 @@ const OrderPage = () => {
         </IonHeader>
         <div className='p-6'>
           <p className='text-center text-gray-400'>Vyplnte vstupne udaje</p>
+          {error && <Alert text={error} bgColor='bg-red-100' textColor='text-red-500' />}
           <form onSubmit={saveInputs}>
             {Object.keys(formData).map((key, index) => (
               <OrderStep
