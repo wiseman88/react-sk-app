@@ -1,7 +1,7 @@
 import { IonIcon } from '@ionic/react'
 
 type Props = {
-  icon: string
+  icon?: string
   text: string
   bgColor?: string
   textColor?: string
