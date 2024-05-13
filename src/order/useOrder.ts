@@ -20,6 +20,7 @@ const useOrder = () => {
     })
 
     const [error, setError] = useState<string | null>(null)
+    const [status, setStatus] = useState(['vyplnte', 'spracovanie', 'v poriadku', 'chyba', 'none'])
 
     const onChange = (e: CustomEvent<InputChangeEventDetail>) => {
         const { name, value } = e.target as HTMLInputElement
@@ -69,7 +70,8 @@ const useOrder = () => {
         onChange,
         saveInputs,
         fetchOrderSteps,
-        error
+        error,
+        status
     }
 }
 

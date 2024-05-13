@@ -14,9 +14,7 @@ import OrderStep from './OrderStep'
 import Alert from '../components/Alert'
 
 const OrderPage = () => {
-  const { formData, onChange, saveInputs, fetchOrderSteps, error } = useOrder()
-
-  const status = ['vyplnte', 'spracovanie', 'v poriadku', 'chyba', 'none']
+  const { formData, onChange, saveInputs, fetchOrderSteps, error, status } = useOrder()
 
   return (
     <IonPage>
