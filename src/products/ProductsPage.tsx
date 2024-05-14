@@ -37,8 +37,7 @@ const ProductsPage = () => {
       <IonContent fullscreen>
         <div className='mt-4'>
           <IonSearchbar
-            placeholder='Čo za teba vybavíme?'
-            value={searchQuery}
+            placeholder='Čo za teba vybavíme?' value={searchQuery}
             onIonInput={(e) => onSearch(e.detail.value!)}
           />
           {loading ? (
@@ -47,10 +46,8 @@ const ProductsPage = () => {
             </div>
           ) : error ? (
             <Alert
-              icon={alertCircleOutline}
-              text='Vyskytla sa chyba pri nacitani produktov'
-              bgColor='bg-red-100'
-              textColor='text-red-600'
+              icon={alertCircleOutline} text='Vyskytla sa chyba pri nacitani produktov'
+              bgColor='bg-red-100' textColor='text-red-600'
             />
           ) : filteredProducts && filteredProducts.length > 0 ? (
             <ProductsList products={filteredProducts} />
