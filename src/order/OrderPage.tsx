@@ -14,11 +14,6 @@ const OrderPage = () => {
     <IonPage>
       <OrderHeader />
       <IonContent>
-        <IonHeader collapse='condense'>
-          <IonToolbar>
-            <IonTitle size='large'>Zalozenie s.r.o.</IonTitle>
-          </IonToolbar>
-        </IonHeader>
         <div className='p-6'>
           <p className='text-center text-gray-400'>Vyplnte vstupne udaje</p>
           <OrderForm />

@@ -45,14 +45,10 @@ const OrderStep = (props: Props) => {
     return (
         <>
             <IonCard className='mb-8'>
-                <IonCardHeader className=''>
+                <IonCardHeader>
                     <IonCardTitle className='flex justify-between'>
                         Nazov s.r.o.
-                        <IonIcon
-                            color='primary'
-                            size='medium'
-                            icon={chatbubbleOutline}
-                        ></IonIcon>
+                        <IonIcon color='primary' size='medium' icon={chatbubbleOutline} />
                     </IonCardTitle>
                 </IonCardHeader>
                 <IonCardContent>
@@ -61,25 +57,20 @@ const OrderStep = (props: Props) => {
                 </IonCardContent>
                 <div className='p-4'>
                     <IonInput
-                        label={props.label}
-                        name={props.name}
-                        value={props.value}
+                        className='p-4'
+                        label={props.label} name={props.name} value={props.value}
                         onIonInput={props.onChange}
-                    ></IonInput>
+                    />
                 </div>
                 <IonCardContent className={`${bgColor}` + ' ' + `${textColor}`}>
                     {props.status}
                 </IonCardContent>
             </IonCard>
             <IonCard className={`${bgColor} mb-8`}>
-                <IonCardHeader className=''>
+                <IonCardHeader>
                     <IonCardTitle className='flex justify-between'>
                         Card without input color
-                        <IonIcon
-                            color='primary'
-                            size='medium'
-                            icon={chatbubbleOutline}
-                        ></IonIcon>
+                        <IonIcon color='primary' size='medium' icon={chatbubbleOutline} />
                     </IonCardTitle>
                 </IonCardHeader>
                 <IonCardContent>
