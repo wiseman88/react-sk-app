@@ -41,8 +41,6 @@ const useOrder = () => {
                 body: JSON.stringify(formData),
             })
 
-            console.log(formData)
-
             if (!response.ok) {
                 setError(`Failed to submit form: ${response.statusText}`);
             }
