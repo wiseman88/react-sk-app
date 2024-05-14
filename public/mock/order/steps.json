@@ -1,22 +1,27 @@
 [
   {
     "id": 1,
-    "input": "ABC firma s.r.o."
+    "input": "ABC firma s.r.o.",
+    "status": "v poriadku"
   },
   {
     "id": 2,
-    "input": "abc@gmail.com"
+    "input": "abc@gmail.com",
+    "status": "v poriadku"
   },
   {
     "id": 3,
-    "input": "IT"
+    "input": "IT",
+    "status": "v poriadku"
   },
   {
     "id": 4,
-    "input": "ofirme.pdf"
+    "input": "ofirme.pdf",
+    "status": "v poriadku"
   },
   {
     "id": 5,
-    "input": "Stavebnictvo"
+    "input": "Stavebnictvo",
+    "status": "v poriadku"
   }
 ]

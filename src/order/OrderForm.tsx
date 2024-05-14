@@ -14,28 +14,28 @@ const OrderForm = () => {
             }
             <form onSubmit={saveInputs}>
                 <OrderStep
-                    name="name" label="Nazov" value={formData.name}
-                    status='vyplnte'
+                    name="name" label="Nazov" value={formData.name.value}
+                    status={formData.name.status}
                     onChange={onChange}
                 />
                 <OrderStep
-                    name="email" label="Email" value={formData.email}
-                    status='spracovanie'
+                    name="email" label="Email" value={formData.email.value}
+                    status={formData.email.status}
                     onChange={onChange}
                 />
                 <OrderStep
-                    name="subjects" label="Subjects" value={formData.subjects}
-                    status='v poriadku'
+                    name="subjects" label="Subjects" value={formData.subjects.value}
+                    status={formData.subjects.status}
                     onChange={onChange}
                 />
                 <OrderStep
-                    name="files" label="Files" value={formData.files}
-                    status='chyba'
+                    name="files" label="Files" value={formData.files.value}
+                    status={formData.files.status}
                     onChange={onChange}
                 />
                 <OrderStep
-                    name="service" label="service" value={formData.service}
-                    status='none'
+                    name="service" label="service" value={formData.service.value}
+                    status={formData.service.status}
                     onChange={onChange}
                 />
                 <IonFab className='py-6 px-2 w-full bg-gray-100 fixed bottom-0 right-0'>
